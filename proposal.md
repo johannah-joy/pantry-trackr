@@ -12,7 +12,7 @@ The Pantry Trackr app tracks the non-perishable food you have and the non-perish
 
 * Vue
 * Django REST
-
+* JS
 
 ## User Stories / Features
 
