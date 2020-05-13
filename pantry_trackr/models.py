@@ -16,5 +16,5 @@ class PantryItem(models.Model):
   quantity_min = models.IntegerField()
 
   def __str__(self):
-      return self.item
+    return self.item
   
