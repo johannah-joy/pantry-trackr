@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.apps.ApiConfig',
     'pantry_trackr.apps.PantryTrackrConfig',
+    'users.apps.UsersConfig',
 ]
 
 REST_FRAMEWORK = {
