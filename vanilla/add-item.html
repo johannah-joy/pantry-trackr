@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,4 +13,25 @@
   <button>submit to pantry</button>
   <!-- store this info in "My Pantry" -->
 </body>
-</html>
+</html> {% endcomment %}
+
+
+
+{% extends 'pantry_trackr/base.html' %}
+{% block title %}
+Add An Item
+{% endblock %}
+ 
+{% block content %}
+	<h3>Create Pantry or Add An Item</h3>
+	<br>
+	<form method="post" action="/add-item/" class="form-group">
+		{% csrf_token %}
+		<div class="input-group mb-3">
+	  		<div class="input-group-prepend">
+	  		<button name="save" type="submit" class="btn btn-success">submit to pantry</button>
+	  		</div>
+	  		{{form.name}}
+		</div>
+	</form>
+{% endblock %}

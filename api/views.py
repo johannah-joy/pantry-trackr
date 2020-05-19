@@ -1,9 +1,9 @@
-# from django.shortcuts import render
+# # from django.shortcuts import render
 
-from rest_framework import generics
+# from rest_framework import generics
 
-from pantry_trackr import models
-from .serializers import UserSerializer
+# from pantry_trackr import models
+# from .serializers import UserSerializer
 
 # class ListUser(generics.ListCreateAPIView):
 #     queryset = models.User.objects.all()

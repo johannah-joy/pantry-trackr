@@ -1,5 +1,5 @@
-from rest_framework import serializers
-from pantry_trackr import models
+# from rest_framework import serializers
+# from pantry_trackr import models
 
 
 # class UserSerializer(serializers.ModelSerializer):

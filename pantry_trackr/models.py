@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+# this is spot on especially if no users app folder
+
 class User(models.Model):
   # user = models.OneToOneField(User)
   name = models.CharField(max_length=50)

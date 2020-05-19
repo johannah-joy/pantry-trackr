@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,4 +16,26 @@
     item name, num currently in pantry, num needed
   </div>
 </body>
-</html>
+</html> {% endcomment %}
+
+
+{% comment %} # app/templates/---.html   example app is 'main' {% endcomment %}
+{% comment %} {% extends 'pantry_trackr/base.html' %}
+
+{% block title %}
+My Pantry
+{% endblock %}
+
+{% block content %}
+  <h1>My Pantry</h1>
+  <h1>{{ls.name}}</h1>
+    <ul>
+      {% for item in ls.item_set.all %}
+        {% if item.complete == True %}
+          <li>{{item.text}} - COMPLETE</li>
+        {% else %}
+          <li>{{item.text}} - INCOMPLETE</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+{% endblock %} {% endcomment %}
