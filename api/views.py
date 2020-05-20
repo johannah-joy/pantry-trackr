@@ -1,15 +1,21 @@
-# # from django.shortcuts import render
+from rest_framework import viewsets
+from django.shortcuts import render
+from pantry_trackr.models import User, PantryItem
+from .serializers import UserSerializer, PantryItemSerializer
 
-# from rest_framework import generics
-
-# from pantry_trackr import models
-# from .serializers import UserSerializer
-
-# class ListUser(generics.ListCreateAPIView):
-#     queryset = models.User.objects.all()
-#     serializer_class = UserSerializer
-
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 # class DetailUser(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = models.User.objects.all()
 #     serializer_class = UserSerializer
+
+
+class PantryItemViewSet(viewsets.ModelViewSet):
+    queryset = PantryItem.objects.all()
+    serializer_class = PantryItemSerializer
+
+# class DetailPantryItem(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = models.PantryItem.objects.all()
+#     serializer_class = PantryItemSerializer

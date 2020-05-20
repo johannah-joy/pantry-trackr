@@ -1,0 +1,116 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css"/>
+  <title>Register For An Account</title>
+</head>
+<body>
+  <h1>Account Registration</h1>
+  <form action="shopping-list.html" method="POST" onsubmit="return matchPassword(this)">
+    <input id="name" type="text" placeholder="name" required><br>
+    <input type="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters" required><br>
+    <input type="password" name="password" placeholder="password: at least 6 characters" pattern=".{6,}" title="Must be at least 6 characters" required><br>
+    <input type="password" name="conf_pass" placeholder="confirm password" required>
+    <br>
+    <button id="register_btn">register</button>
+    <!-- need JS for button to submit -->
+  </form>
+  
+  <script src="register.js"></script>
+</body>
+</html> {% endcomment %}
+
+
+
+{% comment %} {% extends "main/base.html" %}
+
+{% block title %}Account Registration{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-success">Register</button>
+    </form>
+{% endblock %} {% endcomment %}
+
+
+{% comment %} ORIGINAL ABOVE {% endcomment %}
+
+
+{% comment %} <h1>Sign up</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Sign Up">
+</form> {% endcomment %}
+
+
+{% comment %} <form method="POST">
+  {% csrf_token %}
+    <legend class="border-bottom mb-4">Join Today</legend>
+    {{ form }}
+  <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Sign Up</button>
+  </div>
+</form> {% endcomment %}
+
+
+{% comment %} <form action="" method ="post"> 
+    {% csrf_token %} 
+    {{ form }} 
+    <input type="submit" value="Sign up"> 
+</form> {% endcomment %}
+
+
+
+{% comment %} {% extends 'main/header.html' %} {% endcomment %}
+
+{% comment %} {% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+    </form>
+
+    If you already have an account <a href="/login" target="blank"><strong>login</strong></a> instead.
+
+{% endblock %} {% endcomment %}
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+  <h2>Account Registration</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">register</button>
+  </form>
+{% endblock %} {% endcomment %}
+
+
+<script>
+  let register_btn = document.getElementById("register_btn");
+
+register_btn.addEventListener("click", function() {
+    function matchPassword(form) {
+        password = form.password.value;
+        conf_pass = form.conf_pass.value;
+    
+        if (password === '') {   // if empty
+            alert('Please create a password.')
+    
+        } else if (conf_pass === '') {
+            alert('Please confirm your password')
+    
+        } else if (password != conf_pass) {
+            alert('Passwords do not match. Please confirm again')
+        }
+    }
+})
+</script>

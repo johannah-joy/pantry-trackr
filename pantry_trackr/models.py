@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-# this is spot on especially if no users app folder
+# this is spot on, especially if no users app folder
 
 class User(models.Model):
   # user = models.OneToOneField(User)
@@ -20,5 +20,5 @@ class PantryItem(models.Model):
   quantity_min = models.IntegerField()
 
   def __str__(self):
-    return self.item
+    return f'{self.item}, {self.quantity_min}'
   

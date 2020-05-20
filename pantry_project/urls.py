@@ -16,50 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-# from users import views as user_views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/', include('api.urls')),
-    path('user/', include('django.contrib.auth.urls')),
-    # path('register/', user_views.register, name='register'),##
-
-    # path('', include('')),
-
-    # path('registration/', user_views.register),
-    path('registration/', include('pantry_trackr.views')),###############
-    path('', include('pantry_project.urls')),
-    # path('', views.index, name='index'),   # <a href="{% url 'index' %}">Home</a>
+    path('api/v1/', include('api.urls')),
+    path('users/', include('django.contrib.auth.urls')),
+    path('users/', include('users.urls')),
+    path('', include('pantry_trackr.urls')),
 ]
-
-
-# # app/urls.py --- not users/urls.py
-# from django.urls import path
-
-# from . import views
-
-# urlpatterns = [
-#     path('', views.index, name='index'),  # def index in users/view.py
-# ]
-
-# # project/urls.py
-# from django.contrib import admin
-# from django.urls import include, path
-
-# urlpatterns = [
-#     path('', include('main.urls')), # main will be the name of your app
-#     path('admin/', admin.site.urls),
-# ]
-
-
-
-# from django.urls import path
-# from . import views
-
-# urlpatterns = [
-# path("", views.home, name="home"),
-# path("register/", views.register, name="home"),
-# path("login/", views.login, name="home"),
-# path("my-pantry/", views.pantry, name="index"),
-# path("<int:id>", views.index, name="index"),  #add-item
-# ]

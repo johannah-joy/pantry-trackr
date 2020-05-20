@@ -1,5 +1,5 @@
-from django import forms
-# # from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+# from django import forms
+# from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 # from django.contrib.auth.models import User
 # from pantry_trackr.models import *   # import user
 '''
@@ -9,17 +9,12 @@ class RegistrationForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput())
 '''
 
-# from django import forms
-# from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.models import User
-
-
-# class RegisterForm(UserCreationForm):
+# class UserRegisterForm(UserCreationForm):
 #     email = forms.EmailField()
 
 #     class Meta:
-# 	model = User
-# 	fields = ["username", "email", "password1", "password2"]
+#         model = User
+#         fields = ["username", "email", "password1", "password2"]
 
 '''
 class UserForm(forms.ModelForm):

@@ -1,21 +1,13 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+# from django.shortcuts import render, redirect
+# from django.contrib.auth import login, authenticate
+# from django.contrib.auth.forms import UserCreationForm
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()   # user is created
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)  # manually authenticate the user
-            login(request, user)
-            return redirect('pantry')
-    else:
-        form = UserCreationForm()
-    return render(request, 'register.html', {'form': form})
+# def home(request):
+#     context = {
+#         # 'posts': posts
+#     }
+#     return render(request, 'pantry_trackr/home.html', context)
 
 
 
