@@ -1,12 +1,26 @@
+{% comment %} {% load static %} {% endcomment %}
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/base.css' %}"> {% endcomment %}
     <title>{% block title %}Pantry Trackr{% endblock %}</title>
 </head>
-
 <body>
+    {% comment %} <div class='new-header'>
+        {% if user.is_authenticated %}
+        <p>Hello, <a href="{% url 'users:profile' request.user.username %}">{{ request.user.username }}</a>!</p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p><a href="{% url 'posts:new' %}">+ New Blog Post</a></p>
+        {% else %}
+        <p><a href="{% url 'login' %}">Login</a></p>
+        <p><a href="{% url 'users:signup' %}">Sign Up</a></p>
+        {% endif %}
+    </div> {% endcomment %}
     <div id="content" name="content">
 	{% block content %}
-	{% endblock %}
+	{% endblock content %}
     </div>
 
 </body>

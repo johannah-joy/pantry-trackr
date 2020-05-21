@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+# Register/IMPORT your models here.
 
-from .models import User, PantryItem  # import ALL MODELS
+from .models import PantryItem  # UserRegister
 
-admin.site.register(User)
+# admin.site.register(UserRegister)
 admin.site.register(PantryItem)

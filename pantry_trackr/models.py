@@ -1,18 +1,29 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
-# Create your models here.
 
 # this is spot on, especially if no users app folder
 
-class User(models.Model):
-  # user = models.OneToOneField(User)
-  name = models.CharField(max_length=50)
-  email = models.EmailField(max_length=254)
-  # password = 
+# class User(models.Model):
+#   # user = models.OneToOneField(User)
+#   name = models.CharField(max_length=50)
+#   password1 = forms.CharField(widget=forms.PasswordInput())
+#   password2 = forms.CharField(widget=forms.PasswordInput())
 
-  def __str__(self):
-    return self.name
+#   def __str__(self):
+#     return self.name
+
+# class UserRegister(UserCreationForm):
+
+#   class Meta:
+#     model = User
+#     fields = ('username', 'password1', 'password2')
+
+  # def __str__(self):
+  #   return self.username
+  
 
 
 class PantryItem(models.Model):

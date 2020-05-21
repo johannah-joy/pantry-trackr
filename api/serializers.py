@@ -2,15 +2,16 @@ from rest_framework import serializers
 from pantry_trackr import models
 
 
-class UserSerializer(serializers.ModelSerializer):
-  class Meta:
-    fields = (
-      'id',
-      'username',
-      'email',
-      'password',
-    )
-    model = models.User
+# class UserRegisterSerializer(serializers.ModelSerializer):
+#   class Meta:
+#     fields = (
+#       'id',
+#       'username',
+#     #   'password',
+#       'password1',
+#       'password2',
+#     )
+#     model = models.UserRegister
 
 class PantryItemSerializer(serializers.ModelSerializer):
   class Meta:

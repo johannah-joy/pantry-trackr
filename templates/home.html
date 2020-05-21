@@ -1,7 +1,29 @@
-{% if user.is_authenticated %}
-<h1>Welcome {{ user.username }}!</h1>
-<p><a href="{% url 'logout' %}">Logout</a><p>
-{% else %}
-<h1>Welcome, visitor!</h1>
-<p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
-{% endif %}
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantry Trackr Home</title>
+</head>
+<body>
+    <div class='page-header'>
+        {% comment %} <a href="{% url 'post_new' %}"></a> {% endcomment %}
+        <a href="/">Home</a>
+        <a href="my-pantry.html">My Pantry</a>
+        <a href="add-item.html">Add Item To Pantry</a>
+        <a href="used-item.html">Used A Pantry Item</a>
+        <a href="shopping-list.html">My Shopping List</a>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+        <h1>Welcome {{ user.username }}</h1>
+        <p><a href="{% url 'logout' %}">logout</a><p>
+        
+        {% else %}
+        <h1>Welcome</h1>
+        <p>You are not logged in. <a href="{% url 'login' %}">login</a> <a href="{% url 'users:signup' %}">sign Up</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>
+

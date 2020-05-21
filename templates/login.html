@@ -1,14 +1,15 @@
-{% comment %} Login from DRF Lab6 {% endcomment %}
+{% extends "base.html" %}
 
-{% comment %} <h1>Login</h1>
-<form action="" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Login">
-</form> {% endcomment %}
+{% block content %}
+  <h2>Login</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">login</button>
+  </form>
+{% endblock content %}
 
-
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -28,15 +29,4 @@
   <br>
   <a href=""></a>
 </body>
-</html>
-
-
-{% comment %} from DRF Lab6 {% endcomment %}
-
-{% comment %} {% if user.is_authenticated %}
-<h1>Welcome {{ user.username }}!</h1>
-<p><a href="{% url 'logout' %}">Logout</a><p>
-{% else %}
-<h1>Welcome, visitor!</h1>
-<p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
-{% endif %} {% endcomment %}
+</html> {% endcomment %}

@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 from django.shortcuts import render
-from pantry_trackr.models import User, PantryItem
-from .serializers import UserSerializer, PantryItemSerializer
+from pantry_trackr.models import PantryItem #UserRegister
+from .serializers import PantryItemSerializer  #UserRegisterSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+# class UserRegisterViewSet(viewsets.ModelViewSet):
+#     queryset = UserRegister.objects.all()
+#     serializer_class = UserRegisterSerializer
 
 # class DetailUser(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = models.User.objects.all()
