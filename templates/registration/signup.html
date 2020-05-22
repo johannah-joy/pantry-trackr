@@ -7,4 +7,55 @@
     {{ form.as_p }}
     <button type="submit">sign up</button>
   </form>
+  <p><strong><em>If you already have an account <a href="/login" target="blank"><strong>login</strong></a> instead.</em></strong></p>
 {% endblock %}
+
+
+{% comment %} href="/login"
+target="blank" {% endcomment %}
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css"/>
+  <title>Register For An Account</title>
+</head>
+<body>
+  <h1>Account Registration</h1>
+  <form action="shopping-list.html" method="POST" onsubmit="return matchPassword(this)">
+    <input id="name" type="text" placeholder="name" required><br>
+    <input type="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="one or more numbers/letters, @, one or more numbers/letters, ., one or more numbers/letters" required><br>
+    <input type="password" name="password" placeholder="password: at least 6 characters" pattern=".{6,}" title="Must be at least 6 characters" required><br>
+    <input type="password" name="conf_pass" placeholder="confirm password" required>
+    <br>
+    <button id="register_btn">register</button>
+    <!-- need JS for button to submit -->
+  </form>
+  
+  <script src="register.js"></script>
+  <script>
+  let register_btn = document.getElementById("register_btn");
+
+  register_btn.addEventListener("click", function() {
+    function matchPassword(form) {
+      password = form.password.value;
+      conf_pass = form.conf_pass.value;
+  
+      if (password === '') {   // if empty
+        alert('Please create a password.')
+  
+      } else if (conf_pass === '') {
+          alert('Please confirm your password')
+  
+      } else if (password != conf_pass) {
+          alert('Passwords do not match. Please confirm again')
+      }
+    }
+  })
+</script>
+</body>
+</html> {% endcomment %}

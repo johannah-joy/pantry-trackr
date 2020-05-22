@@ -17,6 +17,7 @@
     <div>
         {% if user.is_authenticated %}
         <h1>Welcome {{ user.username }}</h1>
+        {% comment %} <h1>Welcome {{ username }}</h1> {% endcomment %}
         <p><a href="{% url 'logout' %}">logout</a><p>
         
         {% else %}
@@ -27,3 +28,8 @@
 </body>
 </html>
 
+
+{% comment %} user
+user.username
+url logout
+url login {% endcomment %}

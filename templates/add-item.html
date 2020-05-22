@@ -28,10 +28,15 @@ Add An Item
 	<form method="post" action="/add-item/" class="form-group">
 		{% csrf_token %}
 		<div class="input-group mb-3">
-	  		<div class="input-group-prepend">
+	  		<input type="text" placeholder="item to add to pantry">
 	  		<button name="save" type="submit" class="btn btn-success">submit to pantry</button>
+			<input type="text" placeholder="minimum quantity to always have in pantry">
+			<button></button>
 	  		</div>
 	  		{{form.name}}
 		</div>
 	</form>
 {% endblock %}
+
+
+{% comment %} submit input to 'My Pantry' {% endcomment %}
