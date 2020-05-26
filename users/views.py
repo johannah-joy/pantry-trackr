@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from pantry_trackr.models import PantryItem
 
 # Create your views here.
 
@@ -16,7 +17,7 @@ class SignUpView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
-class HomeView():
+class HomeView(generic.View):
     # model =
     template_name = 'home.html'
     # fields or success_url =
@@ -76,6 +77,9 @@ class ShoppingListView():
         # return
 
 
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('login.html'))
 
 
 # def register(request):
