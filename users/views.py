@@ -35,9 +35,9 @@ class LoginView(generic.DetailView):
 
 
 # class AddItemView():
-#     # model =
+#     # model = PantryItem
 #     template_name = 'add-item.html'
-#     # fields or success_url =
+#     success_url = reverse_lazy('my-pantry')
 
 #     # def
 
