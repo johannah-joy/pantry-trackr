@@ -1,3 +1,40 @@
-input {
+/* input {
   margin: 4px;
+} */
+
+.body {
+  text-align: center;
 }
+
+.header {
+  padding: 30px;
+  background: #52B9B7;
+  text-align: center;
+}
+
+.sub-header {
+  padding: 10px;
+  background: #52B9B7;
+  top: 0;
+  width: 100%;
+}
+
+form {
+  border: 3px solid black;
+  padding-bottom: 12px;
+}
+
+/* Mobile Design */
+/* @media (max-width: 414px) {
+  .flexbox-container {
+    display: block;
+  }
+} */
+
+/* Tablet Design */
+/* @media (min-width: 768px) and (max-width: 1024px) {
+  .images {
+    max-width:45%;
+    height:auto;
+  }
+} */

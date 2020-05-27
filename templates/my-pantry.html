@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+
 {% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,25 +21,26 @@
 </html> {% endcomment %}
 
 
-{% comment %} # app/templates/---.html   example app is 'main' {% endcomment %}
-{% extends 'pantry_trackr/base.html' %}
 
 {% block title %}
 My Pantry
 {% endblock %}
 
 {% block content %}
-  <h1>My Pantry</h1>
-  {% comment %} <h1>{{ls.name}}</h1> {% endcomment %}
-  {% if object_list %}
-    <p>{% for item in object_list %}</p>
-      <p>{{ item.name }}</p>
-      {% comment %} {% if photo %}
-      {% else %}
-      {% endif %}
-      <p>photo</p> {% endcomment %}
-  {% else %}
-    <p><strong>Nothing has been added to your Pantry.</strong> <em>Add an item <a href="add-item.html">here</a>.</em></p>
-  {% endif %}
-    
+<body>
+  <div class="body">
+    <h2>My Pantry</h2>
+    {% comment %} <h1>{{ls.name}}</h1> {% endcomment %}
+    {% if object_list %}
+      <p>{% for item in object_list %}</p>
+        <p>{{ item.name }}</p>
+        {% comment %} {% if photo %}
+        {% else %}
+        {% endif %}
+        <p>photo</p> {% endcomment %}
+    {% else %}
+      <p><strong>Nothing has been added to your Pantry.</strong> <em>Add an item <a href="add-item.html">here</a>.</em></p>
+    {% endif %}
+  </div>
+</body> 
 {% endblock %}
