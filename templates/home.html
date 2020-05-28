@@ -2,23 +2,13 @@
 
 {% block content %}
 <body>
-    <div class='page-header'>
-        {% comment %} <a href="{% url 'post_new' %}"></a> {% endcomment %}
-        <a href="/">Home</a>
-        <a href="my-pantry.html">My Pantry</a>
-        <a href="add-item.html">Add Item To Pantry</a>
-        <a href="used-item.html">Used A Pantry Item</a>
-        <a href="shopping-list.html">My Shopping List</a>
-        <a href="login.html">Logout</a>
-    </div>
     <div>
         {% if user.is_authenticated %}
-        <h1>Welcome {{ user.username }}</h1>
-        {% comment %} <h1>Welcome {{ username }}</h1> {% endcomment %}
-        <p><a href="{% url 'logout' %}">logout</a><p>
+        <h2>Welcome, <em>{{ user.username }}</em></h2>
+        {% comment %} <p><a href="{% url 'logout' %}">logout</a><p> {% endcomment %}
         
         {% else %}
-        <h1>Welcome</h1>
+        <h2>Welcome</h2>
         <p>You are not logged in. <a href="{% url 'login' %}">login</a> <a href="{% url 'users:signup' %}">sign Up</a></p>
         {% endif %}
     </div>

@@ -10,18 +10,16 @@
 <body>
     <div class="header">
         <h1 class="app-name">Pantry Trackr</h1>
-        <div class="dropdown">
-            <button class="dropbtn">Menu</button>
-            <div class="dropdown-content">
-                <a href="{% url 'users:home' %}">Home</a>
-                <a href="{% url 'users:my-pantry' %}">My Pantry</a>
-                {% comment %} <a href="{% url 'users:add-item' %}">Add Item To Pantry</a>
-                <a href="{% url 'users:used-item' %}">Used A Pantry Item</a>
-                <a href="{% url 'users:shopping-list' %}">My Shopping List</a> {% endcomment %}
-                <a href="{% url 'login' %}">Logout</a>
-            </div>
-        </div>
     </div>
+    <ul class="nav-top">
+        <li><a href="{% url 'users:home' %}">Home</a></li>
+        <li><a href="{% url 'users:my-pantry' %}">My Pantry</a></li>
+        <li><a href="{% url 'users:add-item' %}">Add Item To Pantry</a></li>
+        {% comment %} <li><a href="{% url 'users:used-item' %}">Used A Pantry Item</a></li>
+        <li><a href="{% url 'users:shopping-list' %}">My Shopping List</a></li> {% endcomment %}
+        <li><a href="{% url 'login' %}">Logout, <em>{{ user.username }}</em></a></li>
+    </ul>
+    
     {% comment %} <div class='sub-header'>
         {% if user.is_authenticated %}
         <p>Hello, <a href="{% url 'users:profile' request.user.username %}">{{ request.user.username }}</a>!</p>

@@ -29,15 +29,14 @@ Add An Item
 	<div class="body">
 		<h3>Create Pantry or Add An Item</h3>
 		<br>
-		<form method="post" action="/add-item/" class="form-group">
+		<form method="post" action="{% url 'users:my-pantry' %}">
 			{% csrf_token %}
-			<div class="input-group mb-3">
-				<input type="text" placeholder="item to add to pantry">
-				<button name="save" type="submit" class="btn btn-success">submit to pantry</button>
-				<input type="text" placeholder="minimum quantity to always have in pantry">
-				<button></button>
-				</div>
-				{{form.name}}
+			<div>
+				<input class="input-box" type="text" placeholder="item to add to pantry">
+				<br><br>
+				<input class="input-box" id="quantity_min" type="text" placeholder="minimum quantity to always have in pantry"><br><br>
+				<button type="submit">submit to pantry</button>
+				{% comment %} {{form.name}} {% endcomment %}
 			</div>
 		</form>
 	</div>

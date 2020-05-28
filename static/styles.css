@@ -1,6 +1,4 @@
-/* input {
-  margin: 4px;
-} */
+/* Desktop Design */
 
 .body {
   text-align: center;
@@ -12,87 +10,61 @@
   text-align: center;
 }
 
-/* Links inside the navbar */
-.header a {
+.header p {
+  float: right;
+  padding-bottom: 4px;
+}
+
+.nav-top {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dddddd;
+  /* background-color: #b29ac3; */
+}
+
+li {
+  /* display: inline; */
   float: left;
-  font-size: 16px;
-  /* color: white; */
+}
+
+li a {
+  display: block;
+  background-color: #dddddd;
+  /* background-color: #b29ac3; */
+  color: #52B9B7;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-/* The dropdown div */
-.dropdown {
-  float: right;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  /* color: white; */
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a lavender background color to navbar links on hover */
-.header a:hover, .dropdown:hover .dropbtn {
+/* Add a lavender background color to dropdown links on hover */
+li a:hover {
   background-color: #b29ac3;
 }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-form {
+.form-border {
   border: 3px solid black;
   padding-bottom: 12px;
   margin-right: 300px;
   margin-left: 300px;
 }
 
+.input-box {
+  width: 20%;
+}
+
 /* Mobile Design */
-/* @media (max-width: 414px) {
-  .flexbox-container {
-    display: block;
+@media (max-width: 414px) {
+  .input-box {
+    width: 80%;
   }
-} */
+}
 
 /* Tablet Design */
-/* @media (min-width: 768px) and (max-width: 1024px) {
-  .images {
-    max-width:45%;
-    height:auto;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .input-box {
+    width: 35%;
   }
-} */
+}

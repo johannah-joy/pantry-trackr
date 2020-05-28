@@ -1,25 +1,11 @@
 {% extends "base.html" %}
 
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Pantry</title>
-</head>
-<body>
-  <div>
-    <h5>id of login name with some sort of icon</h5>
-  </div>
-  <h1>My Pantry</h1>
-  <div>
+
+  {% comment %} <div>
     output of add-item including item name and minimum quantity
     include current quantity in pantry
     item name, num currently in pantry, num needed
-  </div>
-</body>
-</html> {% endcomment %}
-
+  </div> {% endcomment %}
 
 
 {% block title %}
@@ -31,16 +17,23 @@ My Pantry
   <div class="body">
     <h2>My Pantry</h2>
     {% comment %} <h1>{{ls.name}}</h1> {% endcomment %}
-    {% if object_list %}
+    {% comment %} {% if object_list %} {% endcomment %}
       <p>{% for item in object_list %}</p>
         <p>{{ item.name }}</p>
         {% comment %} {% if photo %}
         {% else %}
         {% endif %}
         <p>photo</p> {% endcomment %}
-    {% else %}
-      <p><strong>Nothing has been added to your Pantry.</strong> <em>Add an item <a href="add-item.html">here</a>.</em></p>
-    {% endif %}
+    {% comment %} {% else %}
+      <p><strong>Nothing has been added to your Pantry.</strong> <em>Add an item <a href="add-item.html">here</a>.</em></p> {% endcomment %}
+      {% endfor %}
+    {% comment %} {% endif %} {% endcomment %}
   </div>
-</body> 
+</body>
+
+<script>
+  {% comment %} if (current_input == quantity_min) {
+    output that item to 'shopping-list.html'
+  } {% endcomment %}
+</script>
 {% endblock %}

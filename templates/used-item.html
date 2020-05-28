@@ -5,8 +5,22 @@
   <div class="body">
     <h2>Used A Pantry Item</h2>
     <div>
-      output pantry here with a minus button by each item
+      {% comment %} output pantry here with a minus button by each item {% endcomment %}
+      <input type="number" value="0" id="input"/>
+      {% comment %} value=input of quantity min OR currently have in My Pantry {% endcomment %}
+      <button id="subtract">-</button>
     </div>
   </div>
 </body>
+
+<script>
+  let input = document.getElementById("input")
+  let btn = document.getElementById("subtract")
+
+  btn.addEventListener('click', event => {
+    event.preventDefault();
+    const currentValue = Number(inputField.value) || 0;
+    inputField.value = currentValue - 1;
+  });
+</script>
 {% endblock %}

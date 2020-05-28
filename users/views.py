@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -14,24 +15,13 @@ class SignUpView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
-class HomeView(generic.DetailView):
-    # model =
+class HomeView(generic.TemplateView):
     template_name = 'home.html'
-    # success_url = reverse_lazy('home')
-
-    # def
-
-        # return
 
 
 class LoginView(generic.DetailView):
-    # model =
     template_name = 'login.html'
     success_url = reverse_lazy('home')
-
-#     # def
-
-#         # return
 
 
 # class AddItemView():
@@ -42,6 +32,9 @@ class LoginView(generic.DetailView):
 #     # def
 
 #         # return
+
+def addItem(request):
+    return HttpResponseRedirect('/my-pantry/')
 
 
 class MyPantryView(generic.DetailView):
@@ -74,24 +67,7 @@ class MyPantryView(generic.DetailView):
 #         # return
 
 
-def logout_user(request):
-    logout(request)
-    # return HttpResponseRedirect(reverse('login.html'))
-    return redirect('login.html')
-
-
-
-
-
-
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             messages.success(request, f'Account created for {username}!')
-#             return redirect('my-pantry.html')
-#     else:
-#         form = UserRegisterForm()
-#     return render(request, 'users/register.html', {'form': form})
+# def logout_user(request):
+#     logout(request)
+#     # return HttpResponseRedirect(reverse('login.html'))
+#     return redirect('login.html')
