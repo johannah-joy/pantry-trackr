@@ -16,6 +16,26 @@ My Pantry
 <body>
   <div class="body">
     <h2>My Pantry</h2>
+    <form method="post" action="">
+      <h3>Add An Item</h3>
+			{% csrf_token %}
+			<div>
+				<input class="input-box" id="item_name" type="text" placeholder="item to add to pantry">
+				<br><br>
+				<input class="input-box" id="quantity_min" type="text" placeholder="minimum quantity to always have in pantry"><br><br>
+				<input class="input-box" id="quantity_now" type="text" placeholder="current quantity in your pantry now"><br><br>
+				<button type="submit">submit to pantry</button>
+			</div>
+		</form>
+    <br><br>
+
+    <form method="post" action="">
+      {% csrf_token %}
+      <input type="number" value="0" id="input"/>
+      {% comment %} value=input of quantity min OR currently have in My Pantry {% endcomment %}
+      <button id="subtract">-</button>
+    </form>
+
     {% comment %} <h1>{{ls.name}}</h1> {% endcomment %}
     {% comment %} {% if object_list %} {% endcomment %}
       <p>{% for item in object_list %}</p>
@@ -35,5 +55,14 @@ My Pantry
   {% comment %} if (current_input == quantity_min) {
     output that item to 'shopping-list.html'
   } {% endcomment %}
+
+  let input = document.getElementById("input")
+  let btn = document.getElementById("subtract")
+
+  btn.addEventListener('click', event => {
+    event.preventDefault();
+    const currentValue = Number(inputField.value) || 0;
+    inputField.value = currentValue - 1;
+  });
 </script>
 {% endblock %}

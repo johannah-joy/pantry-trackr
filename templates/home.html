@@ -9,7 +9,7 @@
         
         {% else %}
         <h2>Welcome</h2>
-        <p>You are not logged in. <a href="{% url 'login' %}">login</a> <a href="{% url 'users:signup' %}">sign Up</a></p>
+        <p>You are not logged in. Please <strong><a href="{% url 'users:login' %}">login</a></strong> or <strong><a href="{% url 'users:signup' %}">sign up</a></strong>.</p>
         {% endif %}
     </div>
 </body>
