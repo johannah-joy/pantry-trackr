@@ -27,9 +27,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class PantryItem(models.Model):
-  item = models.CharField(max_length=30)
+  item_name = models.CharField(max_length=30)
   quantity_min = models.IntegerField()
+  quantity_now = models.IntegerField()
 
   def __str__(self):
-    return f'{self.item}, {self.quantity_min}'
+    return f'{self.item_name}, {self.quantity_min}, {self.quantity_now}'
   

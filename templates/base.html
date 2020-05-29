@@ -15,7 +15,7 @@
         <li><a href="{% url 'users:home' %}">Home</a></li>
         {% if user.is_authenticated %}
         <li><a href="{% url 'users:my-pantry' %}">My Pantry</a></li>
-        <li><a href="{% url 'users:add-item' %}">Add Item To Pantry</a></li>
+        {% comment %} <li><a href="{% url 'users:add-item' %}">Add Item To Pantry</a></li> {% endcomment %}
         {% comment %} <li><a href="{% url 'users:used-item' %}">Used A Pantry Item</a></li>
         <li><a href="{% url 'users:shopping-list' %}">My Shopping List</a></li> {% endcomment %}
         <li><a href="{% url 'users:logout' %}">Logout, <em>{{ user.username }}</em></a></li>
