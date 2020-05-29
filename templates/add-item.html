@@ -32,10 +32,10 @@ Add An Item
 		<form method="post" action="{% url 'users:my-pantry' %}">
 			{% csrf_token %}
 			<div>
-				<input class="input-box" type="text" placeholder="item to add to pantry">
+				<input class="input-box" id="item_name" name="item_name" type="text" placeholder="item to add to pantry">
 				<br><br>
-				<input class="input-box" id="quantity_min" type="text" placeholder="minimum quantity to always have in pantry"><br><br>
-				<input class="input-box" id="quantity_now" type="text" placeholder="current quantity in your pantry now"><br><br>
+				<input class="input-box" id="quantity_min" name="quantity_min" type="text" placeholder="minimum quantity to always have in pantry"><br><br>
+				<input class="input-box" id="quantity_now" name="quantity_now" type="text" placeholder="current quantity in your pantry now"><br><br>
 				<button type="submit">submit to pantry</button>
 				{% comment %} {{form.name}} {% endcomment %}
 			</div>
